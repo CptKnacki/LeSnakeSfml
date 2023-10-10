@@ -24,7 +24,7 @@ void GameObjectManager::UnRegisterAll()
 	GO_List.clear();
 }
 
-void GameObjectManager::Draw(sf::RenderWindow& _window)
+void GameObjectManager::Draw(sf::RenderWindow & _window)
 {
 	for (GameObject* _object : GO_List)
 	{

@@ -135,18 +135,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Engine.cpp" />
+    <ClCompile Include="GameEngineManager\GameEngineManager.cpp" />
     <ClCompile Include="GameObjectManager\GameObjectManager.cpp" />
     <ClCompile Include="GameObject\GameObject.cpp" />
+    <ClCompile Include="Grid\Grid.cpp" />
+    <ClCompile Include="Node\Node.cpp" />
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="SFML_BaseProject.cpp" />
     <ClCompile Include="Viewport\Viewport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h" />
+    <ClInclude Include="GameEngineManager\GameEngineManager.h" />
     <ClInclude Include="GameObjectManager\GameObjectManager.h" />
     <ClInclude Include="GameObject\GameObject.h" />
+    <ClInclude Include="Grid\Grid.h" />
+    <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Singleton\Singleton.h" />
+    <ClInclude Include="Utils.h" />
     <ClInclude Include="Viewport\Viewport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
