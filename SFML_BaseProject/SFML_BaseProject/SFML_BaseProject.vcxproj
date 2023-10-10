@@ -152,6 +152,24 @@
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Viewport\Viewport.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Apple\Apple.cpp" />
+    <ClCompile Include="BaseMenuManager\MenuManager.cpp" />
+    <ClCompile Include="Button\Button.cpp" />
+    <ClCompile Include="DataBase\DataBase.cpp" />
+    <ClCompile Include="Engine\Engine.cpp" />
+    <ClCompile Include="GameEngineManager\GameEngineManager.cpp" />
+    <ClCompile Include="GameObjectManager\GameObjectManager.cpp" />
+    <ClCompile Include="GameObject\GameObject.cpp" />
+    <ClCompile Include="Grid\Grid.cpp" />
+    <ClCompile Include="Menu\BaseMenu.cpp" />
+    <ClCompile Include="Node\Node.cpp" />
+    <ClCompile Include="Object\Object.cpp" />
+    <ClCompile Include="SFML_BaseProject.cpp" />
+    <ClCompile Include="Snake\SnakeBody\SnakeBody.cpp" />
+    <ClCompile Include="Snake\SnakeHead\SnakeHead.cpp" />
+    <ClCompile Include="Viewport\Viewport.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

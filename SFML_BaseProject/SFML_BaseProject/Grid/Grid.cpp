@@ -41,6 +41,16 @@ Grid::~Grid()
 	nodeList.clear();
 }
 
+float Grid::GetNodeSizeX()
+{
+	return nodeSizeX;
+}
+
+float Grid::GetNodeSizeY()
+{
+	return nodeSizeY;
+}
+
 std::vector<Node*> Grid::GetNodeList()
 {
 	return nodeList;
@@ -87,11 +97,9 @@ void Grid::CreateApple()
 	int _gridSize = nodeList.size();
 	int _result = rand() % _gridSize;
 
-	std::cout << _result << std::endl;
-
 	float _size = (nodeSizeX >= nodeSizeY) ? nodeSizeY : nodeSizeX;
 
-	_appleSize = nodeList[_result]->GetShape()->getPosition() + sf::Vector2f(nodeSizeX / 2, nodeSizeY / 2);
+	sf::Vector2f _appleSize = nodeList[_result]->GetShape()->getPosition() + sf::Vector2f(nodeSizeX / 2, nodeSizeY / 2);
 
 	nodeList[_result]->SetContainedObject(new Apple(_appleSize, _size));
 }

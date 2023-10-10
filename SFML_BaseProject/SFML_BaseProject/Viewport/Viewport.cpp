@@ -6,6 +6,16 @@ Viewport::Viewport(const int& _width, const int& _height, const std::string& _ti
 	gameWindow = new sf::RenderWindow(sf::VideoMode(_width, _height), _title);
 
     newGrid = new Grid(gameWindow, 20);
+
+    snakeHead = new SnakeHead(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[165]->GetShape()->getPosition());
+
+   snakeHead->AddBody(new SnakeBody(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[164]->GetShape()->getPosition()));
+   snakeHead->AddBody(new SnakeBody(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[163]->GetShape()->getPosition()));
+   snakeHead->AddBody(new SnakeBody(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[162]->GetShape()->getPosition()));
+   snakeHead->AddBody(new SnakeBody(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[161]->GetShape()->getPosition()));
+   snakeHead->AddBody(new SnakeBody(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[160]->GetShape()->getPosition()));
+
+   updateClock.restart();
 }
 
 Viewport::~Viewport()
@@ -15,6 +25,12 @@ Viewport::~Viewport()
 
     delete newGrid;
     newGrid = nullptr;
+
+    delete snakeHead;
+    snakeHead = nullptr;
+
+    delete snakeBody;
+    snakeBody = nullptr;
 }
 
 sf::RenderWindow* Viewport::GetWindow()
@@ -35,7 +51,7 @@ void Viewport::OpenWindow()
 
         gameWindow->clear();
         DrawAllObjects();
-        GameObjectManager::Instance()->Update();
+        DetermineUpdate();
         gameWindow->display();
     }
 }
@@ -43,4 +59,14 @@ void Viewport::OpenWindow()
 void Viewport::DrawAllObjects()
 {
     GameObjectManager::Instance()->Draw(*gameWindow);
+}
+
+void Viewport::DetermineUpdate()
+{
+    if (updateClock.getElapsedTime().asSeconds() > 0.2)
+    {
+        GameObjectManager::Instance()->Update();
+        updateClock.restart();
+    }
+
 }

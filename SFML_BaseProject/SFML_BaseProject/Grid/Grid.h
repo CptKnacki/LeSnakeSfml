@@ -9,13 +9,15 @@ private:
 	std::vector<Node*> nodeList;
 	float nodeSizeX;
 	float nodeSizeY;
-	sf::Vector2f _appleSize;
 
 public:
 	Grid(sf::RenderWindow* _window, const int& _nodeDivideCount = 20);
 	~Grid();
 	
+	float GetNodeSizeX();
+	float GetNodeSizeY();
 	std::vector<Node*> GetNodeList();
+
 	void SetGridColor();
 	void CreateApple();
 	bool HasApple();
