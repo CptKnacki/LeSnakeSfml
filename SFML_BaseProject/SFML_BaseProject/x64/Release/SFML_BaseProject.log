@@ -1,6 +1,31 @@
-﻿  Button.cpp
+﻿  Apple.cpp
+  Button.cpp
+  DataBase.cpp
+  Engine.cpp
+  GameEngineManager.cpp
+  GameObjectManager.cpp
+  GameObject.cpp
+  Grid.cpp
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Grid\Grid.cpp(14,35): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Grid\Grid.cpp(15,35): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Grid\Grid.cpp(85,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Grid\Grid.cpp(87,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Node.cpp
+  Object.cpp
+  SFML_BaseProject.cpp
+  SnakeBody.cpp
+  SnakeHead.cpp
+  Viewport.cpp
   Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 277 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+  All 273 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
-  SFML_BaseProject.vcxproj -> C:\Users\DEMO1209\Documents\LeSnakeSFML\SFML_BaseProject\x64\Release\SFML_BaseProject.exe
+  SFML_BaseProject.vcxproj -> C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\x64\Release\SFML_BaseProject.exe
