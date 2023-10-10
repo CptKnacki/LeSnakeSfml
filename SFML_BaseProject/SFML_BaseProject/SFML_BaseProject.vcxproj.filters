@@ -18,6 +18,7 @@
     <ClInclude Include="Snake\SnakeHead\SnakeHead.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Viewport\Viewport.h" />
+<<<<<<< Updated upstream
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SFML_BaseProject.cpp" />
@@ -25,6 +26,17 @@
     <ClCompile Include="BaseMenuManager\MenuManager.cpp" />
     <ClCompile Include="DataBase\DataBase.cpp" />
     <ClCompile Include="Button\Button.cpp" />
+=======
+    <ClInclude Include="Menu\MainMenu\MainMenu.h" />
+    <ClInclude Include="Label\Label.h" />
+    <ClInclude Include="Image\Image.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Apple\Apple.cpp" />
+    <ClCompile Include="BaseMenuManager\MenuManager.cpp" />
+    <ClCompile Include="Button\Button.cpp" />
+    <ClCompile Include="DataBase\DataBase.cpp" />
+>>>>>>> Stashed changes
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="GameEngineManager\GameEngineManager.cpp" />
     <ClCompile Include="GameObject\GameObject.cpp" />
@@ -36,5 +48,12 @@
     <ClCompile Include="Snake\SnakeBody\SnakeBody.cpp" />
     <ClCompile Include="Snake\SnakeHead\SnakeHead.cpp" />
     <ClCompile Include="Viewport\Viewport.cpp" />
+<<<<<<< Updated upstream
+=======
+    <ClCompile Include="SFML_BaseProject.cpp" />
+    <ClCompile Include="Menu\MainMenu\MainMenu.cpp" />
+    <ClCompile Include="Label\Label.cpp" />
+    <ClCompile Include="Image\Image.cpp" />
+>>>>>>> Stashed changes
   </ItemGroup>
 </Project>
