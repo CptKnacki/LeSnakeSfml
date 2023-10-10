@@ -4,11 +4,11 @@
 #include <iostream>
 #include "Engine/Engine.h"
 
+
 int main()
 {
 	Engine _engine(1280, 720, "SnakeSFML");
 	_engine.RunEngine();
-
 
 	return 0;
 }

@@ -1,13 +1,12 @@
 #pragma once
-#include "../Object/Object.h"
 
 template<typename T>
-class Singleton : public Object
+class Singleton
 {
 	static inline T* instance = nullptr;
 public:
 	Singleton() = default;
-	virtual ~Singleton() override
+	virtual ~Singleton()
 	{
 		OnDestroy();
 	}
@@ -18,7 +17,7 @@ public:
 			instance = new T();
 		return instance;
 	}
-	void OnDestory()
+	void OnDestroy()
 	{
 		delete instance;
 	}
