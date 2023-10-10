@@ -2,6 +2,8 @@
 #include "../Object/Object.h"
 #include "SFML/Graphics.hpp"
 
+using namespace sf;
+
 class GameObject : public Object
 {
 	bool canDraw = false;
