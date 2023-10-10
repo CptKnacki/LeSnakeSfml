@@ -136,6 +136,9 @@
   <ItemGroup>
     <ClInclude Include="Apple\Apple.h" />
     <ClInclude Include="BaseMenuManager\MenuManager.h" />
+    <ClInclude Include="Image\Image.h" />
+    <ClInclude Include="Label\Label.h" />
+    <ClInclude Include="Menu\MainMenu\MainMenu.h" />
     <ClInclude Include="Menu\BaseMenu.h" />
     <ClInclude Include="Button\Button.h" />
     <ClInclude Include="DataBase\DataBase.h" />

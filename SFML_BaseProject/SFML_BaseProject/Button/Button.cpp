@@ -7,7 +7,7 @@ Button::Button(const Vector2f& _position, const Vector2f& _size, const std::stri
 	rect->setPosition(_position);
 	label = Text(_label, DataBase::Font);
 	label.setOrigin(Vector2f(-_size.x / 4, _size.y / 4));
-	label.setPosition(_position + Vector2f(0, _size.y / 2));
+	label.setPosition(_position + Vector2f(0, _size.y / 1.5));
 	label.setCharacterSize(_fontSize);
 	label.setFillColor(Color::Red);
 	rect->setSize(Vector2f(label.getGlobalBounds().width + _size.x / 2, _size.y));
@@ -26,4 +26,26 @@ void Button::Draw(RenderWindow& _window)
 
 void Button::Update()
 {
+}
+
+void Button::SetPosition(const Vector2f& _position)
+{
+	rect->setPosition(_position);
+	label.setPosition(_position + Vector2f(0, rect->getSize().y /1.5));
+}
+
+Vector2f Button::GetPosition() const
+{
+	return rect->getPosition();
+}
+
+void Button::SetSize(const Vector2f& _size)
+{
+	rect->setSize(_size);
+	rect->setSize(Vector2f(label.getGlobalBounds().width + _size.x / 2, _size.y));
+}
+
+Vector2f Button::GetSize() const
+{
+	return rect->getSize();
 }

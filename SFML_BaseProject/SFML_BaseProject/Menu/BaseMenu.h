@@ -5,6 +5,7 @@
 
 class BaseMenu
 {
+protected:
 	std::vector<GameObject*> elements = std::vector<GameObject*>();
 	bool isOpen = false;
 	const char* title = "";
