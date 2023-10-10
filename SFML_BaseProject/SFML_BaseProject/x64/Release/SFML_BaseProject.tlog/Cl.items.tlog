@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Apple\Apple.cpp;C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\x64\Release\Apple.obj
+=======
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\BaseMenuManager\MenuManager.cpp;C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\x64\Release\MenuManager.obj
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\BaseMenu.cpp;C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\x64\Release\BaseMenu.obj
+>>>>>>> Stashed changes
 C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Button\Button.cpp;C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\x64\Release\Button.obj
 C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\DataBase\DataBase.cpp;C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\x64\Release\DataBase.obj
 C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Engine\Engine.cpp;C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\x64\Release\Engine.obj

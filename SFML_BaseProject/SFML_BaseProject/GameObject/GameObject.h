@@ -8,6 +8,7 @@ class GameObject : public Object
 {
 	bool canDraw = false;
 public:
+	void SetCanDraw(bool _state);
 	GameObject();
 	virtual ~GameObject() override;
 

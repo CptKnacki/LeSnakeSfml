@@ -51,10 +51,17 @@
     <ClCompile Include="DataBase\DataBase.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< Updated upstream
     <ClCompile Include="Snake\SnakeHead\SnakeHead.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Snake\SnakeBody\SnakeBody.cpp">
+=======
+    <ClCompile Include="Menu\BaseMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseMenuManager\MenuManager.cpp">
+>>>>>>> Stashed changes
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,10 +105,17 @@
     <ClInclude Include="DataBase\DataBase.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
     <ClInclude Include="Snake\SnakeHead\SnakeHead.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Snake\SnakeBody\SnakeBody.h">
+=======
+    <ClInclude Include="Menu\BaseMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseMenuManager\MenuManager.h">
+>>>>>>> Stashed changes
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿  Apple.cpp
   Button.cpp
   DataBase.cpp
@@ -27,5 +28,12 @@ C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject
   Generating code
   Previous IPDB was built with incompatible compiler, fall back to full compilation.
   All 273 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+=======
+﻿  MenuManager.cpp
+  Generating code
+  4 of 394 functions ( 1.0%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+>>>>>>> Stashed changes
   Finished generating code
   SFML_BaseProject.vcxproj -> C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\x64\Release\SFML_BaseProject.exe
