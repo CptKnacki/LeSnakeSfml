@@ -2,9 +2,9 @@
 #include "../Utils.h"
 #include "../Apple/Apple.h"
 #include <iostream>
-#include <stdio.h>      /* printf, scanf, puts, NULL */
-#include <stdlib.h>     /* srand, rand */
-#include <time.h>       /* time */
+#include <stdio.h>      
+#include <stdlib.h>     
+#include <time.h>       
 
 Grid::Grid(sf::RenderWindow* _window, const int& _nodeDivideCount)
 {
@@ -92,15 +92,23 @@ void Grid::SetGridColor()
 
 void Grid::CreateApple()
 {
-	srand(time(NULL));
+	srand(time(0));
 
 	int _gridSize = nodeList.size();
 	int _result = rand() % _gridSize;
 
+
+	//for (size_t i = 0; i < GET_VIEWPORT->GetSnakeHead()->GetBodyList().size(); i++)
+	//{
+	//	while (nodeList[_result]->GetContainedObject() && nodeList[_result]->GetShape()->getPosition() == GET_VIEWPORT->GetSnakeHead()->GetBodyList()[i]->GetShape()->getPosition())
+	//	{
+	//		_result = rand() % _gridSize;
+	//	}
+	//}
+	
 	float _size = (nodeSizeX >= nodeSizeY) ? nodeSizeY : nodeSizeX;
 
 	sf::Vector2f _appleSize = nodeList[_result]->GetShape()->getPosition() + sf::Vector2f(nodeSizeX / 2, nodeSizeY / 2);
-
 	nodeList[_result]->SetContainedObject(new Apple(_appleSize, _size));
 }
 

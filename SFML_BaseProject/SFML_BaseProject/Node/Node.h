@@ -12,6 +12,7 @@ private:
 public:
 	Node(const sf::Vector2f& _size, const sf::Vector2f& _position);
 	~Node();
+	void DestroyContainedObject();
 	GameObject* GetContainedObject();
 	sf::RectangleShape* GetShape();
 	void SetContainedObject(GameObject* _object);

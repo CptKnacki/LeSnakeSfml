@@ -1,5 +1,6 @@
 #include "SnakeHead.h"
 #include "../../Utils.h"
+#include "../../BaseMenuManager/MenuManager.h"
 
 
 SnakeHead::SnakeHead(const sf::Vector2f& _size, const sf::Vector2f& _position)
@@ -22,9 +23,80 @@ SnakeHead::~SnakeHead()
 	headShape = nullptr;
 }
 
-void SnakeHead::AddBody(SnakeBody* _bodyPart)
+int SnakeHead::GetScore()
 {
-	bodyList.push_back(_bodyPart);
+	return bodyList.size();
+}
+
+sf::RectangleShape* SnakeHead::GetHeadShape()
+{
+	return headShape;
+}
+
+std::vector<SnakeBody*> SnakeHead::GetBodyList()
+{
+	return std::vector<SnakeBody*>();
+}
+
+void SnakeHead::AddBody()
+{
+
+	sf::Vector2f _positionOffset;
+
+	switch (direction)
+	{
+	case UP: 
+	{
+		_positionOffset = sf::Vector2f(0 , rightMovementRange * bodyList.size());
+		break;
+	}
+	case DOWN: 
+	{
+
+		_positionOffset = sf::Vector2f(0 , -rightMovementRange * bodyList.size());
+		break; 
+	}
+	case LEFT:
+	{
+
+		_positionOffset = sf::Vector2f(leftMovementRange * bodyList.size(), 0);
+
+		break; 
+	}
+	case RIGHT:
+	{
+
+		_positionOffset = sf::Vector2f(-leftMovementRange * bodyList.size(), 0);
+		break; 
+	}
+	default:
+		break;
+	}
+
+	bodyList.push_back(new SnakeBody(sf::Vector2f(leftMovementRange, rightMovementRange), headShape->getPosition() + _positionOffset));
+	
+}
+
+void SnakeHead::DetermineDeath()
+{
+	for (size_t i = 0; i < bodyList.size(); i++)
+	{
+		if (bodyList[i]->GetShape()->getPosition() == headShape->getPosition())
+		{
+			headShape->setFillColor(sf::Color::Transparent);
+			headShape->setOutlineColor(sf::Color::Transparent);
+
+			for (size_t i = 0; i < bodyList.size(); i++)
+			{
+				bodyList[i]->GetShape()->setFillColor(sf::Color::Transparent);
+				bodyList[i]->GetShape()->setOutlineColor(sf::Color::Transparent);
+			}
+
+			gameIsOn = false;
+			MenuManager::Instance()->SetState(Menu::Over);
+			return;
+		}
+	}
 }
 
 void SnakeHead::Draw(sf::RenderWindow& _window)
@@ -34,7 +106,9 @@ void SnakeHead::Draw(sf::RenderWindow& _window)
 
 void SnakeHead::Update()
 {
-	GET_WINDOW->getSize().x;
+
+	if (!gameIsOn)
+		return;
 
 	sf::Vector2f _headPosition = headShape->getPosition();
 
@@ -122,7 +196,6 @@ void SnakeHead::Update()
 	}
 
 
-	// IF INPUT Z Q S D CHANGER LA DIRECTION //
 
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
 		if(direction == MoveDirection::LEFT || direction == MoveDirection::RIGHT)
@@ -144,6 +217,7 @@ void SnakeHead::Update()
 			direction = MoveDirection::RIGHT;
 	
 	
+	DetermineDeath();
 	
 	
 }

@@ -22,12 +22,17 @@ private:
 	float rightMovementRange = 0.0f;
 
 	MoveDirection direction = MoveDirection::RIGHT;
+	bool gameIsOn = true;
 
 public:
 	SnakeHead(const sf::Vector2f& _size, const sf::Vector2f& _position);
 	~SnakeHead();
-	
-	void AddBody(SnakeBody* _bodyPart);
+
+	void GetScore();
+	sf::RectangleShape* GetHeadShape();
+	std::vector<SnakeBody*> GetBodyList();
+	void AddBody();
+	void DetermineDeath();
 	virtual void Draw(sf::RenderWindow& _window) override;
 	virtual void Update() override;
 };

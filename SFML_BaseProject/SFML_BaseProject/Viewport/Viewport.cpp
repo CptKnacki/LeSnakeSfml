@@ -5,15 +5,15 @@ Viewport::Viewport(const int& _width, const int& _height, const std::string& _ti
 {
 	gameWindow = new sf::RenderWindow(sf::VideoMode(_width, _height), _title);
 
-    newGrid = new Grid(gameWindow, 20);
+    grid = new Grid(gameWindow, 20);
 
-    snakeHead = new SnakeHead(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[165]->GetShape()->getPosition());
+    snakeHead = new SnakeHead(sf::Vector2f(grid->GetNodeSizeX(), grid->GetNodeSizeY()) , grid->GetNodeList()[165]->GetShape()->getPosition());
 
-   snakeHead->AddBody(new SnakeBody(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[164]->GetShape()->getPosition()));
-   snakeHead->AddBody(new SnakeBody(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[163]->GetShape()->getPosition()));
-   snakeHead->AddBody(new SnakeBody(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[162]->GetShape()->getPosition()));
-   snakeHead->AddBody(new SnakeBody(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[161]->GetShape()->getPosition()));
-   snakeHead->AddBody(new SnakeBody(sf::Vector2f(newGrid->GetNodeSizeX(), newGrid->GetNodeSizeY()) , newGrid->GetNodeList()[160]->GetShape()->getPosition()));
+    snakeHead->AddBody();
+    snakeHead->AddBody();
+    snakeHead->AddBody();
+    snakeHead->AddBody();
+    snakeHead->AddBody();
 
    updateClock.restart();
 }
@@ -23,14 +23,21 @@ Viewport::~Viewport()
     delete gameWindow;
     gameWindow = nullptr;
 
-    delete newGrid;
-    newGrid = nullptr;
+    delete grid;
+    grid = nullptr;
 
     delete snakeHead;
     snakeHead = nullptr;
+}
 
-    delete snakeBody;
-    snakeBody = nullptr;
+Grid* Viewport::GetGrid()
+{
+    return grid;
+}
+
+SnakeHead* Viewport::GetSnakeHead()
+{
+    return snakeHead;
 }
 
 sf::RenderWindow* Viewport::GetWindow()
@@ -63,10 +70,26 @@ void Viewport::DrawAllObjects()
 
 void Viewport::DetermineUpdate()
 {
-    if (updateClock.getElapsedTime().asSeconds() > 0.2)
+   
+    DetermineAppleCollision();
+
+    if (updateClock.getElapsedTime().asSeconds() > 0.1)
     {
+
         GameObjectManager::Instance()->Update();
         updateClock.restart();
     }
 
+}
+
+void Viewport::DetermineAppleCollision()
+{
+    for (size_t i = 0; i < grid->GetNodeList().size(); i++)
+    {
+        if (grid->GetNodeList()[i]->GetContainedObject() && grid->GetNodeList()[i]->GetShape()->getPosition() == snakeHead->GetHeadShape()->getPosition())
+        {
+            grid->GetNodeList()[i]->DestroyContainedObject();
+            snakeHead->AddBody();
+        }
+    }
 }

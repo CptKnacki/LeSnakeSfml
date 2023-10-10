@@ -25,7 +25,20 @@ sf::RectangleShape* Node::GetShape()
 
 GameObject* Node::GetContainedObject()
 {
+	if (!containedObject)
+		return nullptr;
+
 	return containedObject;
+}
+
+void Node::DestroyContainedObject()
+{
+	if (containedObject)
+	{
+		delete containedObject;
+		containedObject = nullptr;
+	}
+
 }
 
 void Node::SetFillColor(const sf::Color& _color)
