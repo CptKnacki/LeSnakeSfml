@@ -1,6 +1,7 @@
 #include "SnakeHead.h"
 #include "../../Utils.h"
 #include "../../BaseMenuManager/MenuManager.h"
+#include <iostream>
 
 
 SnakeHead::SnakeHead(const sf::Vector2f& _size, const sf::Vector2f& _position)
@@ -94,6 +95,14 @@ void SnakeHead::DetermineDeath()
 
 			gameIsOn = false;
 			MenuManager::Instance()->SetState(Menu::Over);
+
+			for (size_t i = 0; i < GET_VIEWPORT->GetGrid()->GetNodeList().size(); i++)
+			{
+				GET_VIEWPORT->GetGrid()->GetNodeList()[i]->DestroyContainedObject();
+			}
+
+			GET_VIEWPORT->GetGrid()->SetGameIsOn(false);
+			
 			return;
 		}
 	}
@@ -218,6 +227,5 @@ void SnakeHead::Update()
 	
 	
 	DetermineDeath();
-	
 	
 }

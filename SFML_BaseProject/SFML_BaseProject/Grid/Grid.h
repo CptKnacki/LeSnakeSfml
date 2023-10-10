@@ -10,10 +10,13 @@ private:
 	float nodeSizeX;
 	float nodeSizeY;
 
+	bool gameIsOn = true;
+
 public:
 	Grid(sf::RenderWindow* _window, const int& _nodeDivideCount = 20);
 	~Grid();
 	
+	void SetGameIsOn(bool _value);
 	float GetNodeSizeX();
 	float GetNodeSizeY();
 	std::vector<Node*> GetNodeList();

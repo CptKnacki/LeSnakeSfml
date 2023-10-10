@@ -41,6 +41,11 @@ Grid::~Grid()
 	nodeList.clear();
 }
 
+void Grid::SetGameIsOn(bool _value)
+{
+	gameIsOn = _value;
+}
+
 float Grid::GetNodeSizeX()
 {
 	return nodeSizeX;
@@ -96,20 +101,28 @@ void Grid::CreateApple()
 
 	int _gridSize = nodeList.size();
 	int _result = rand() % _gridSize;
+	int _offset = 0;
 
 
-	//for (size_t i = 0; i < GET_VIEWPORT->GetSnakeHead()->GetBodyList().size(); i++)
-	//{
-	//	while (nodeList[_result]->GetContainedObject() && nodeList[_result]->GetShape()->getPosition() == GET_VIEWPORT->GetSnakeHead()->GetBodyList()[i]->GetShape()->getPosition())
-	//	{
-	//		_result = rand() % _gridSize;
-	//	}
-	//}
 	
 	float _size = (nodeSizeX >= nodeSizeY) ? nodeSizeY : nodeSizeX;
 
 	sf::Vector2f _appleSize = nodeList[_result]->GetShape()->getPosition() + sf::Vector2f(nodeSizeX / 2, nodeSizeY / 2);
 	nodeList[_result]->SetContainedObject(new Apple(_appleSize, _size));
+
+	if (nodeList[_result]->GetShape()->getPosition() == GET_VIEWPORT->GetSnakeHead()->GetHeadShape()->getPosition())
+	{
+	
+		nodeList[_result]->DestroyContainedObject();
+	}
+
+	for (size_t i = 0; i < GET_VIEWPORT->GetSnakeHead()->GetBodyList().size(); i++)
+	{
+
+		nodeList[_result]->DestroyContainedObject();
+		
+	}
+
 }
 
 bool Grid::HasApple()
@@ -137,6 +150,9 @@ void Grid::Draw(sf::RenderWindow& _window)
 
 void Grid::Update()
 {
+	if (!gameIsOn)
+		return;
+
 
 	if (!HasApple())
 		CreateApple();
