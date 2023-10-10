@@ -6,8 +6,7 @@ Node::Node(const sf::Vector2f& _size, const sf::Vector2f& _position)
 
 	nodeShape = new sf::RectangleShape(_size);
 	nodeShape->setPosition(_position);
-	nodeShape->setOutlineThickness(1.5f);
-	nodeShape->setFillColor(sf::Color::Transparent);
+	nodeShape->setOutlineThickness(0.0f);
 	nodeShape->setOutlineColor(sf::Color::White);
 
 }
@@ -27,4 +26,9 @@ sf::RectangleShape* Node::GetShape()
 GameObject* Node::GetContainedObject()
 {
 	return containedObject;
+}
+
+void Node::SetFillColor(const sf::Color& _color)
+{
+	nodeShape->setFillColor(_color);
 }

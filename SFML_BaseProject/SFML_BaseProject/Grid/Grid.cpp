@@ -24,6 +24,8 @@ Grid::Grid(sf::RenderWindow* _window, const int& _nodeDivideCount)
 
 		_indexX++;
 	}
+
+	SetGridColor();
 }
 
 Grid::~Grid()
@@ -38,4 +40,50 @@ Grid::~Grid()
 std::vector<Node*> Grid::GetNodeList()
 {
 	return nodeList;
+}
+
+void Grid::SetGridColor()
+{
+
+	bool isSecondLine = false;
+	int _index = 0;
+
+	for (size_t i = 0; i < nodeList.size(); i++)
+	{
+		if (_index == 20)
+		{
+			_index = 0;
+			isSecondLine = !isSecondLine;
+		}
+
+		if (isSecondLine)
+		{
+			if(i % 2 == 0)
+				nodeList[i]->SetFillColor(sf::Color(45, 210, 0));
+			else
+				nodeList[i]->SetFillColor(sf::Color(30, 160, 0));
+		}
+		else
+		{
+			if (i % 2 == 0)
+				nodeList[i]->SetFillColor(sf::Color(30, 160, 0));
+			else
+				nodeList[i]->SetFillColor(sf::Color(45, 210, 0));
+		}
+
+
+		_index++;
+	}
+}
+
+void Grid::Draw(sf::RenderWindow& _window)
+{
+	for (size_t i = 0; i < nodeList.size(); i++)
+	{
+		_window.draw(*nodeList[i]->GetShape());
+	}
+}
+
+void Grid::Update()
+{
 }

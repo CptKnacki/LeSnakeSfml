@@ -1,4 +1,5 @@
 #include "Viewport.h"
+#include "../GameObjectManager/GameObjectManager.h"
 
 Viewport::Viewport(const int& _width, const int& _height, const std::string& _title)
 {
@@ -34,14 +35,12 @@ void Viewport::OpenWindow()
 
         gameWindow->clear();
         DrawAllObjects();
+        GameObjectManager::Instance()->Update();
         gameWindow->display();
     }
 }
 
 void Viewport::DrawAllObjects()
 {
-    for (size_t i = 0; i < newGrid->GetNodeList().size(); i++)
-    {
-        gameWindow->draw(*newGrid->GetNodeList()[i]->GetShape());
-    }
+    GameObjectManager::Instance()->Draw(*gameWindow);
 }

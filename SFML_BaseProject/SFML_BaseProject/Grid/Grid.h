@@ -11,6 +11,14 @@ private:
 public:
 	Grid(sf::RenderWindow* _window, const int& _nodeDivideCount = 20);
 	~Grid();
+	
 	std::vector<Node*> GetNodeList();
+	void SetGridColor();
+
+
+	virtual void Draw(sf::RenderWindow& _window) override;
+	virtual void Update() override;
+
+
 };
 
