@@ -12,6 +12,6 @@ DataBase::~DataBase()
 
 void DataBase::LoadFont()
 {
-	if (!Font.loadFromFile(""))
+	if (!Font.loadFromFile("../Font/Minecraftia-Regular.ttf"))
 		std::cout << "la font ne charge pas !";
 }

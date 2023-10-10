@@ -1,12 +1,13 @@
 #pragma once
 #include <string>
 #include "../Viewport/Viewport.h"
+#include "../DataBase/DataBase.h"
 
 
 class Engine
 {
 private:
-
+	DataBase* dataBase = nullptr;
 	Viewport* viewport = nullptr;
 
 

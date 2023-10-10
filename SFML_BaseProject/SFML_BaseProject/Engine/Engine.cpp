@@ -3,12 +3,14 @@
 
 Engine::Engine()
 {
+	dataBase = new DataBase();
 	viewport = new Viewport(1280, 720, "SnakeGame");
 	GameEngineManager::Instance()->Register(this);
 }
 
 Engine::Engine(const int& _width, const int& _height, const std::string& _title)
 {
+	dataBase = new DataBase();
 	viewport = new Viewport(_width, _height, _title);
 	GameEngineManager::Instance()->Register(this);
 }
