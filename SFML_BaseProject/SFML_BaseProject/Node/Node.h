@@ -14,6 +14,7 @@ public:
 	~Node();
 	GameObject* GetContainedObject();
 	sf::RectangleShape* GetShape();
+	void SetContainedObject(GameObject* _object);
 	void SetFillColor(const sf::Color& _color);
 };
 

@@ -32,3 +32,8 @@ void Node::SetFillColor(const sf::Color& _color)
 {
 	nodeShape->setFillColor(_color);
 }
+
+void Node::SetContainedObject(GameObject* _object)
+{
+	containedObject = _object;
+}

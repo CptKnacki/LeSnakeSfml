@@ -1,14 +1,18 @@
 #include "Grid.h"
 #include "../Utils.h"
-
+#include "../Apple/Apple.h"
+#include <iostream>
+#include <stdio.h>      /* printf, scanf, puts, NULL */
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 Grid::Grid(sf::RenderWindow* _window, const int& _nodeDivideCount)
 {
 
 	//sf::RenderWindow* _windows = GET_ENGINE;
 
-	float _nodeSizeX = _window->getSize().x / _nodeDivideCount;
-	float _nodeSizeY = _window->getSize().y / _nodeDivideCount;
+	nodeSizeX = _window->getSize().x / _nodeDivideCount;
+	nodeSizeY = _window->getSize().y / _nodeDivideCount;
 	int _indexX = 0;
 	int _indexY = 0;
 
@@ -20,7 +24,7 @@ Grid::Grid(sf::RenderWindow* _window, const int& _nodeDivideCount)
 			_indexY++;
 		}
 
-		nodeList.push_back(new Node(sf::Vector2f(_nodeSizeX, _nodeSizeY), sf::Vector2f(_nodeSizeX * _indexX, _nodeSizeY * _indexY)));
+		nodeList.push_back(new Node(sf::Vector2f(nodeSizeX, nodeSizeY), sf::Vector2f(nodeSizeX * _indexX, nodeSizeY * _indexY)));
 
 		_indexX++;
 	}
@@ -76,6 +80,37 @@ void Grid::SetGridColor()
 	}
 }
 
+void Grid::CreateApple()
+{
+	srand(time(NULL));
+
+	int _gridSize = nodeList.size();
+	int _result = rand() % _gridSize;
+
+	std::cout << _result << std::endl;
+
+	float _size = (nodeSizeX >= nodeSizeY) ? nodeSizeY : nodeSizeX;
+
+	_appleSize = nodeList[_result]->GetShape()->getPosition() + sf::Vector2f(nodeSizeX / 2, nodeSizeY / 2);
+
+	nodeList[_result]->SetContainedObject(new Apple(_appleSize, _size));
+}
+
+bool Grid::HasApple()
+{
+	bool _hasApple = false;
+
+	for (size_t i = 0; i < nodeList.size(); i++)
+	{
+		Apple* _apple = dynamic_cast<Apple*>(nodeList[i]->GetContainedObject());
+
+		if (_apple)
+			_hasApple = true;
+	}
+
+	return _hasApple;
+}
+
 void Grid::Draw(sf::RenderWindow& _window)
 {
 	for (size_t i = 0; i < nodeList.size(); i++)
@@ -86,4 +121,7 @@ void Grid::Draw(sf::RenderWindow& _window)
 
 void Grid::Update()
 {
+
+	if (!HasApple())
+		CreateApple();
 }

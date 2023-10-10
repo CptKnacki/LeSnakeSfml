@@ -134,6 +134,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Apple\Apple.cpp" />
     <ClCompile Include="Button\Button.cpp" />
     <ClCompile Include="DataBase\DataBase.cpp" />
     <ClCompile Include="Engine\Engine.cpp" />
@@ -144,9 +145,12 @@
     <ClCompile Include="Node\Node.cpp" />
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="SFML_BaseProject.cpp" />
+    <ClCompile Include="Snake\SnakeBody\SnakeBody.cpp" />
+    <ClCompile Include="Snake\SnakeHead\SnakeHead.cpp" />
     <ClCompile Include="Viewport\Viewport.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Apple\Apple.h" />
     <ClInclude Include="Button\Button.h" />
     <ClInclude Include="DataBase\DataBase.h" />
     <ClInclude Include="Engine\Engine.h" />
@@ -157,6 +161,8 @@
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Singleton\Singleton.h" />
+    <ClInclude Include="Snake\SnakeBody\SnakeBody.h" />
+    <ClInclude Include="Snake\SnakeHead\SnakeHead.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Viewport\Viewport.h" />
   </ItemGroup>

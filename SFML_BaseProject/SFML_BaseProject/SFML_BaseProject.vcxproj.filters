@@ -42,10 +42,19 @@
     <ClCompile Include="GameEngineManager\GameEngineManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Apple\Apple.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="Button\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DataBase\DataBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Snake\SnakeHead\SnakeHead.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Snake\SnakeBody\SnakeBody.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,10 +89,19 @@
     <ClInclude Include="Utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Apple\Apple.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Button\Button.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DataBase\DataBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake\SnakeHead\SnakeHead.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Snake\SnakeBody\SnakeBody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
