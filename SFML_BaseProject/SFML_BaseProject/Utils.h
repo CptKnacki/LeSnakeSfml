@@ -6,4 +6,5 @@
 
 
 #define GET_WINDOW GameEngineManager::Instance()->GetEngineInstance()->GetViewport()->GetWindow()
+#define GET_VIEWPORT GameEngineManager::Instance()->GetEngineInstance()->GetViewport()
 #define GET_ENGINE GameEngineManager::Instance()->GetEngineInstance()->GetViewport()->GetWindow()
