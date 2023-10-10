@@ -1,5 +1,6 @@
 #include "Viewport.h"
 #include "../GameObjectManager/GameObjectManager.h"
+#include "../BaseMenuManager/MenuManager.h"
 
 Viewport::Viewport(const int& _width, const int& _height, const std::string& _title)
 {
@@ -59,6 +60,7 @@ void Viewport::OpenWindow()
         gameWindow->clear();
         DrawAllObjects();
         DetermineUpdate();
+        MenuManager::Instance()->Update();
         gameWindow->display();
     }
 }

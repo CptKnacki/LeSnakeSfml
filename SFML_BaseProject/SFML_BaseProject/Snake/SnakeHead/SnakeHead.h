@@ -28,7 +28,7 @@ public:
 	SnakeHead(const sf::Vector2f& _size, const sf::Vector2f& _position);
 	~SnakeHead();
 
-	void GetScore();
+	int GetScore();
 	sf::RectangleShape* GetHeadShape();
 	std::vector<SnakeBody*> GetBodyList();
 	void AddBody();
