@@ -9,5 +9,7 @@ class Viewport
 public:
 	Viewport(const int& _width, const int& _height, const std::string& _title);
 	~Viewport();
+	void OpenWindow();
+	void DrawAllObjects();
 };
 

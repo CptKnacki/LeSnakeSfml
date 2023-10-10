@@ -135,13 +135,16 @@
   <ItemGroup>
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="GameObjectManager\GameObjectManager.cpp" />
+    <ClCompile Include="GameObject\GameObject.cpp" />
+    <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="SFML_BaseProject.cpp" />
     <ClCompile Include="Viewport\Viewport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h" />
     <ClInclude Include="GameObjectManager\GameObjectManager.h" />
-    <ClInclude Include="Object.h" />
+    <ClInclude Include="GameObject\GameObject.h" />
+    <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="Viewport\Viewport.h" />
   </ItemGroup>

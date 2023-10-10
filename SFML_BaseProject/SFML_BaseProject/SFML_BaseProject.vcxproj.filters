@@ -24,7 +24,13 @@
     <ClCompile Include="Viewport\Viewport.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GameObject\GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="GameObjectManager\GameObjectManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Object.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,13 +41,16 @@
     <ClInclude Include="Viewport\Viewport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton\Singleton.h">
+    <ClInclude Include="GameObject\GameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameObjectManager\GameObjectManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Object.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton\Singleton.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
