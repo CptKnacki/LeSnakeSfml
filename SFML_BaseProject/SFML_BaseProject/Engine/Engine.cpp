@@ -8,6 +8,7 @@ Engine::Engine()
 	viewport = new Viewport(1280, 720, "SnakeGame");
 	GameEngineManager::Instance()->Register(this);
 	main = new MainMenu();
+	over = new GameOverMenu();
 }
 
 Engine::Engine(const int& _width, const int& _height, const std::string& _title)
@@ -16,6 +17,7 @@ Engine::Engine(const int& _width, const int& _height, const std::string& _title)
 	viewport = new Viewport(_width, _height, _title);
 	GameEngineManager::Instance()->Register(this);
 	main = new MainMenu();
+	over = new GameOverMenu();
 }
 
 Engine::~Engine()
@@ -35,7 +37,7 @@ Viewport* Engine::GetViewport()
 
 void Engine::RunEngine()
 {
-	MenuManager::Instance()->SetState(Menu::Main);
+	MenuManager::Instance()->SetState(Menu::Over);
 	viewport->OpenWindow();
 }
 

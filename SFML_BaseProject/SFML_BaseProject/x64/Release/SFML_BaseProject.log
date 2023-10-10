@@ -1,58 +1,10 @@
-<<<<<<< Updated upstream
-﻿  Apple.cpp
-  MenuManager.cpp
-  Button.cpp
-  DataBase.cpp
-  Engine.cpp
-  GameEngineManager.cpp
-  GameObjectManager.cpp
-  GameObject.cpp
-  Grid.cpp
-C:\Users\DEMO1209\Desktop\GitHubRepos\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Grid\Grid.cpp(14,35): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
-=======
-﻿  MainMenu.cpp
-C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\MainMenu\MainMenu.cpp(19,88): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+﻿  GameOverMenu.cpp
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\GameOverMenu\GameOverMenu.cpp(27,88): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\MainMenu\MainMenu.cpp(19,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
->>>>>>> Stashed changes
-          with
-          [
-              T=unsigned int
-          ]
-<<<<<<< Updated upstream
-C:\Users\DEMO1209\Desktop\GitHubRepos\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Grid\Grid.cpp(15,35): warning C4244: '=': conversion from 'T' to 'float', possible loss of data
-=======
-          and
-          [
-              T=float
-          ]
-C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\MainMenu\MainMenu.cpp(26,87): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
->>>>>>> Stashed changes
-          with
-          [
-              T=unsigned int
-          ]
-<<<<<<< Updated upstream
-C:\Users\DEMO1209\Desktop\GitHubRepos\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Grid\Grid.cpp(85,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\DEMO1209\Desktop\GitHubRepos\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Grid\Grid.cpp(87,16): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  BaseMenu.cpp
-  Node.cpp
-  Object.cpp
-  SnakeBody.cpp
-  SnakeHead.cpp
-  Viewport.cpp
-  Generating code
-  Previous IPDB was built with incompatible compiler, fall back to full compilation.
-  All 416 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
-=======
-          and
-          [
-              T=float
-          ]
-C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\MainMenu\MainMenu.cpp(26,58): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\GameOverMenu\GameOverMenu.cpp(27,59): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -61,17 +13,12 @@ C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject
           [
               T=float
           ]
-C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\MainMenu\MainMenu.cpp(33,63): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\GameOverMenu\GameOverMenu.cpp(35,91): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\MainMenu\MainMenu.cpp(42,84): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\MainMenu\MainMenu.cpp(42,53): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\GameOverMenu\GameOverMenu.cpp(35,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -80,20 +27,27 @@ C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject
           [
               T=float
           ]
-C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\MainMenu\MainMenu.cpp(43,31): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\GameOverMenu\GameOverMenu.cpp(43,89): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
-C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\MainMenu\MainMenu.cpp(43,26): warning C4305: 'argument': truncation from 'double' to 'T'
+C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\SFML_BaseProject\Menu\GameOverMenu\GameOverMenu.cpp(43,60): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
   Generating code
-  1 of 472 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  2 of 560 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     1 functions had inline decision re-evaluated but remain unchanged
->>>>>>> Stashed changes
   Finished generating code
-  SFML_BaseProject.vcxproj -> C:\Users\DEMO1209\Desktop\GitHubRepos\LeSnakeSfml\SFML_BaseProject\x64\Release\SFML_BaseProject.exe
+  SFML_BaseProject.vcxproj -> C:\Users\DOME3105\Documents\GitHub\LeSnakeSfml\SFML_BaseProject\x64\Release\SFML_BaseProject.exe

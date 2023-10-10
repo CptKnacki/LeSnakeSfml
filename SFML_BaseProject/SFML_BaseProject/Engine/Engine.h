@@ -3,6 +3,7 @@
 #include "../Viewport/Viewport.h"
 #include "../DataBase/DataBase.h"
 #include "../Menu/MainMenu/MainMenu.h"
+#include "../Menu/GameOverMenu/GameOverMenu.h"
 
 
 class Engine
@@ -12,6 +13,7 @@ private:
 	Viewport* viewport = nullptr;
 
 	MainMenu* main = nullptr;
+	GameOverMenu* over = nullptr;
 
 public:
 	Engine();

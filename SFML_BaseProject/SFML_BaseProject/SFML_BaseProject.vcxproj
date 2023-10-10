@@ -136,6 +136,7 @@
   <ItemGroup>
     <ClInclude Include="Apple\Apple.h" />
     <ClInclude Include="BaseMenuManager\MenuManager.h" />
+    <ClInclude Include="Menu\GameOverMenu\GameOverMenu.h" />
     <ClInclude Include="Image\Image.h" />
     <ClInclude Include="Label\Label.h" />
     <ClInclude Include="Menu\MainMenu\MainMenu.h" />
@@ -164,8 +165,12 @@
     <ClCompile Include="GameEngineManager\GameEngineManager.cpp" />
     <ClCompile Include="GameObjectManager\GameObjectManager.cpp" />
     <ClCompile Include="GameObject\GameObject.cpp" />
+    <ClCompile Include="Menu\GameOverMenu\GameOverMenu.cpp" />
     <ClCompile Include="Grid\Grid.cpp" />
+    <ClCompile Include="Image\Image.cpp" />
+    <ClCompile Include="Label\Label.cpp" />
     <ClCompile Include="Menu\BaseMenu.cpp" />
+    <ClCompile Include="Menu\MainMenu\MainMenu.cpp" />
     <ClCompile Include="Node\Node.cpp" />
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="SFML_BaseProject.cpp" />

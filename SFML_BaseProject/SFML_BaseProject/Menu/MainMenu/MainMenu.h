@@ -14,6 +14,8 @@ public:
 	MainMenu();
 	~MainMenu();
 
+	void Update() override;
+
 private:
 	void InitPlayButton();
 	void InitSnakeTitle();

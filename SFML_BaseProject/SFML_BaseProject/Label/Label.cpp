@@ -13,7 +13,8 @@ Label::~Label()
 
 void Label::Draw(RenderWindow& _window)
 {
-    _window.draw(text);
+    if (canDraw)
+        _window.draw(text);
 }
 
 void Label::Update()

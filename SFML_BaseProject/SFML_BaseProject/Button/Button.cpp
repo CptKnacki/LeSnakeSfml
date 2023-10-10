@@ -1,8 +1,9 @@
 #include "Button.h"
 #include "../DataBase/DataBase.h"
 
-Button::Button(const Vector2f& _position, const Vector2f& _size, const std::string& _label, const int& _fontSize)
+Button::Button(const Vector2f& _position, const Vector2f& _size, const std::string& _label, RenderWindow* _render, const int& _fontSize)
 {
+	render = _render;
 	rect = new RectangleShape(_size);
 	rect->setPosition(_position);
 	label = Text(_label, DataBase::Font);
@@ -13,6 +14,15 @@ Button::Button(const Vector2f& _position, const Vector2f& _size, const std::stri
 	rect->setSize(Vector2f(label.getGlobalBounds().width + _size.x / 2, _size.y));
 }
 
+bool Button::Contains(const Vector2i& _input) const
+{
+	const bool _isValid = (_input.x > rect->getPosition().x &&
+		_input.x < rect->getPosition().x + rect->getSize().x &&
+		_input.y > rect->getPosition().y &&
+		_input.y < rect->getPosition().y + rect->getSize().y);
+	return _isValid;
+}
+
 Button::~Button()
 {
 	delete rect;
@@ -20,12 +30,29 @@ Button::~Button()
 
 void Button::Draw(RenderWindow& _window)
 {
+	if (!canDraw)
+		return;
 	_window.draw(*rect);
 	_window.draw(label);
 }
 
 void Button::Update()
 {
+
+}
+
+bool Button::IsClicked()
+{
+	bool _canClick = Contains(Mouse::getPosition(*render)),
+		_hit = Mouse::isButtonPressed(Mouse::Left);
+	if (_canClick && _hit && !isClicked)
+	{
+		isClicked = true;
+		return true;
+	}
+	else if (!_hit && isClicked)
+		isClicked = false;
+	return false;
 }
 
 void Button::SetPosition(const Vector2f& _position)

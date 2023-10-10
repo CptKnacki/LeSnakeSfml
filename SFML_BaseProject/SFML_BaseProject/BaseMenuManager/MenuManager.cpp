@@ -24,12 +24,15 @@ void MenuManager::SwitchMenu()
 	case Menu::Main:
 		if (menuList["Main"])
 			menuList["Main"]->Open();
+		break;
 	case Menu::Game:
 		if (menuList["Game"])
 			menuList["Game"]->Open();
+		break;
 	case Menu::Over:
 		if (menuList["Over"])
 			menuList["Over"]->Open();
+		break;
 	case None:
 		return;
 	}

@@ -6,6 +6,7 @@ using namespace sf;
 
 class GameObject : public Object
 {
+protected:
 	bool canDraw = false;
 public:
 	void SetCanDraw(bool _state);

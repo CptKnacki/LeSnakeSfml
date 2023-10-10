@@ -1,6 +1,7 @@
 #include "MainMenu.h"
 #include "../../Utils.h"
 #include <iostream>
+#include "../../BaseMenuManager/MenuManager.h"
 
 MainMenu::MainMenu() : BaseMenu("Main")
 {
@@ -14,9 +15,15 @@ MainMenu::~MainMenu()
 {
 }
 
+void MainMenu::Update()
+{
+	if (playButton->IsClicked())
+		MenuManager::Instance()->SetState(Menu::Game);
+}
+
 void MainMenu::InitPlayButton()
 {
-	playButton = new Button(Vector2f(GET_WINDOW->getSize().x / 2, GET_WINDOW->getSize().y / 1.5), Vector2f(400, 100), "Play", 40);
+	playButton = new Button(Vector2f(GET_WINDOW->getSize().x / 2, GET_WINDOW->getSize().y / 1.5), Vector2f(400, 100), "Play", GET_WINDOW, 40);
 	playButton->SetPosition(playButton->GetPosition() - Vector2f(playButton->GetSize().x / 2, 0));
 	elements.push_back(playButton);
 }

@@ -12,7 +12,8 @@ UImage::~UImage()
 
 void UImage::Draw(RenderWindow& _window)
 {
-	_window.draw(*image);
+	if (canDraw)
+		_window.draw(*image);
 }
 
 void UImage::Update()
