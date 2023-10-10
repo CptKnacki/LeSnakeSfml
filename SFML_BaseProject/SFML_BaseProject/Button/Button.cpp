@@ -45,7 +45,7 @@ bool Button::IsClicked()
 {
 	bool _canClick = Contains(Mouse::getPosition(*render)),
 		_hit = Mouse::isButtonPressed(Mouse::Left);
-	if (_canClick && _hit && !isClicked)
+	if (_canClick && _hit && !isClicked && canDraw)
 	{
 		isClicked = true;
 		return true;

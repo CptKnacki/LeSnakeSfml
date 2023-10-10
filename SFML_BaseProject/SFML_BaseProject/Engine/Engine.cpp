@@ -37,7 +37,7 @@ Viewport* Engine::GetViewport()
 
 void Engine::RunEngine()
 {
-	MenuManager::Instance()->SetState(Menu::Over);
+	MenuManager::Instance()->SetState(Menu::Main);
 	viewport->OpenWindow();
 }
 
