@@ -157,3 +157,8 @@ void Grid::Update()
 	if (!HasApple())
 		CreateApple();
 }
+
+void Grid::Restart()
+{
+	gameIsOn = true;
+}

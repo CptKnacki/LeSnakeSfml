@@ -21,7 +21,8 @@ void GameOverMenu::Update()
 	if (restartButton->IsClicked())
 	{
 		MenuManager::Instance()->SetState(Menu::Game);
-		GET_VIEWPORT->GetSnakeHead()->Reset();
+		GET_VIEWPORT->GetSnakeHead()->Restart();
+		GET_VIEWPORT->GetGrid()->Restart();
 	}
 }
 

@@ -28,6 +28,6 @@ public:
 	virtual void Draw(sf::RenderWindow& _window) override;
 	virtual void Update() override;
 
-
+	virtual void Restart() override;
 };
 

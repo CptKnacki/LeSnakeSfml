@@ -8,7 +8,9 @@ Viewport::Viewport(const int& _width, const int& _height, const std::string& _ti
 
     grid = new Grid(gameWindow, 20);
 
-    snakeHead = new SnakeHead(sf::Vector2f(grid->GetNodeSizeX(), grid->GetNodeSizeY()) , grid->GetNodeList()[165]->GetShape()->getPosition());
+   snakeHead = new SnakeHead(sf::Vector2f(grid->GetNodeSizeX(), grid->GetNodeSizeY()) , grid->GetNodeList()[165]->GetShape()->getPosition());
+   snakeHead->Kill();
+   grid->SetGameIsOn(false);
 
    updateClock.restart();
 }

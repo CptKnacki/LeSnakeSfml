@@ -33,8 +33,9 @@ public:
 	std::vector<SnakeBody*> GetBodyList();
 	void AddBody();
 	void DetermineDeath();
+	void Kill();
 	virtual void Draw(sf::RenderWindow& _window) override;
 	virtual void Update() override;
-	void Reset();
+	virtual void Restart() override;
 };
 

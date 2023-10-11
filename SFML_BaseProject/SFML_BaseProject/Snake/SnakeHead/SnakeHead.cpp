@@ -108,6 +108,21 @@ void SnakeHead::DetermineDeath()
 	}
 }
 
+void SnakeHead::Kill()
+{
+	headShape->setFillColor(sf::Color::Transparent);
+	headShape->setOutlineColor(sf::Color::Transparent);
+
+	for (size_t i = 0; i < bodyList.size(); i++)
+	{
+		delete bodyList[i];
+		bodyList[i] = nullptr;
+	}
+
+	gameIsOn = false;
+
+}
+
 void SnakeHead::Draw(sf::RenderWindow& _window)
 {
 	_window.draw(*headShape);
@@ -234,7 +249,7 @@ void SnakeHead::Update()
 	
 }
 
-void SnakeHead::Reset()
+void SnakeHead::Restart()
 {
 	gameIsOn = true;
 	headShape->setPosition(GET_VIEWPORT->GetGrid()->GetNodeList()[165]->GetShape()->getPosition());

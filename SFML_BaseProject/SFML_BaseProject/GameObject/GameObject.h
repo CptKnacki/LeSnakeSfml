@@ -15,5 +15,6 @@ public:
 
 	virtual void Draw(sf::RenderWindow& _window) {}
 	virtual void Update() {}
+	virtual void Restart() {}
 };
 
