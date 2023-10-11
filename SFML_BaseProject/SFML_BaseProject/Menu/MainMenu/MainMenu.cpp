@@ -18,7 +18,10 @@ MainMenu::~MainMenu()
 void MainMenu::Update()
 {
 	if (playButton->IsClicked())
+	{
 		MenuManager::Instance()->SetState(Menu::Game);
+		GET_VIEWPORT->GetSnakeHead()->Reset();
+	}
 }
 
 void MainMenu::InitPlayButton()

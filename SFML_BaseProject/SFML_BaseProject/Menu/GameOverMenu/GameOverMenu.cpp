@@ -19,7 +19,10 @@ void GameOverMenu::Update()
 	if (returnMenu->IsClicked())
 		MenuManager::Instance()->SetState(Menu::Main);
 	if (restartButton->IsClicked())
+	{
 		MenuManager::Instance()->SetState(Menu::Game);
+		GET_VIEWPORT->GetSnakeHead()->Reset();
+	}
 }
 
 void GameOverMenu::InitReturnMenu()
