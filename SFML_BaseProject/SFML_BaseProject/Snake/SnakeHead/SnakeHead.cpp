@@ -210,22 +210,22 @@ void SnakeHead::Update()
 
 
 
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		if(direction == MoveDirection::LEFT || direction == MoveDirection::RIGHT)
 			direction = MoveDirection::UP;
 	
 
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 		if(direction == MoveDirection::UP || direction == MoveDirection::DOWN)
 			direction = MoveDirection::LEFT;
 	
 	
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+	if(sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 		if(direction == MoveDirection::LEFT || direction == MoveDirection::RIGHT)
 		direction = MoveDirection::DOWN;
 	
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 		if(direction == MoveDirection::UP || direction == MoveDirection::DOWN)
 			direction = MoveDirection::RIGHT;
 	
@@ -237,8 +237,8 @@ void SnakeHead::Update()
 void SnakeHead::Reset()
 {
 	headShape->setPosition(GET_VIEWPORT->GetGrid()->GetNodeList()[165]->GetShape()->getPosition());
-	headShape->setFillColor(sf::Color::Transparent);
-	headShape->setOutlineColor(sf::Color::Transparent);
+	headShape->setFillColor(sf::Color(225, 210, 0));
+	headShape->setOutlineColor(sf::Color::Black);
 
 	for (size_t i = 0; i < bodyList.size(); i++)
 	{
