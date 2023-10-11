@@ -236,6 +236,7 @@ void SnakeHead::Update()
 
 void SnakeHead::Reset()
 {
+	gameIsOn = true;
 	headShape->setPosition(GET_VIEWPORT->GetGrid()->GetNodeList()[165]->GetShape()->getPosition());
 	headShape->setFillColor(sf::Color(225, 210, 0));
 	headShape->setOutlineColor(sf::Color::Black);

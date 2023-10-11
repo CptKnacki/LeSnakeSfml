@@ -6,7 +6,7 @@
 
 int main()
 {
-	Engine _engine(1280, 720, "SnakeSFML");
+	Engine _engine(1000, 1000, "SnakeSFML");
 	_engine.RunEngine();
 
 
