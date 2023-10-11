@@ -128,7 +128,8 @@ void SnakeHead::Update()
 		headShape->setPosition(headShape->getPosition() - sf::Vector2f(0, rightMovementRange));
 		if (headShape->getPosition().y < 0)
 			headShape->setPosition(sf::Vector2f(headShape->getPosition().x, GET_WINDOW->getSize().y - rightMovementRange));
-
+		if (bodyList.size() == 0)
+			break;
 		for (size_t i = bodyList.size() - 1; i > 0; i--)
 		{
 			bodyList[i]->GetShape()->setPosition(bodyList[i - 1]->GetShape()->getPosition());
@@ -147,7 +148,8 @@ void SnakeHead::Update()
 		headShape->setPosition(headShape->getPosition() + sf::Vector2f(0, rightMovementRange));
 		if (headShape->getPosition().y >= GET_WINDOW->getSize().y)
 			headShape->setPosition(sf::Vector2f(headShape->getPosition().x, 0));
-
+		if(bodyList.size() == 0)
+			break;
 		for (size_t i = bodyList.size() - 1; i > 0; i--)
 		{
 			bodyList[i]->GetShape()->setPosition(bodyList[i - 1]->GetShape()->getPosition());
@@ -167,7 +169,8 @@ void SnakeHead::Update()
 		headShape->setPosition(headShape->getPosition() - sf::Vector2f(leftMovementRange, 0));
 		if (headShape->getPosition().x < 0)
 			headShape->setPosition(sf::Vector2f(GET_WINDOW->getSize().x - leftMovementRange, headShape->getPosition().y));
-
+		if(bodyList.size() == 0)
+			break;
 		for (size_t i = bodyList.size() - 1; i > 0; i--)
 		{
 			bodyList[i]->GetShape()->setPosition(bodyList[i - 1]->GetShape()->getPosition());
@@ -186,7 +189,8 @@ void SnakeHead::Update()
 		headShape->setPosition(headShape->getPosition() + sf::Vector2f(leftMovementRange, 0));
 		if (headShape->getPosition().x >= GET_WINDOW->getSize().x)
 			headShape->setPosition(sf::Vector2f(0, headShape->getPosition().y));
-
+		if(bodyList.size() == 0)
+			break;
 		for (size_t i = bodyList.size() - 1; i > 0; i--)
 		{
 			bodyList[i]->GetShape()->setPosition(bodyList[i - 1]->GetShape()->getPosition());
@@ -228,4 +232,19 @@ void SnakeHead::Update()
 	
 	DetermineDeath();
 	
+}
+
+void SnakeHead::Reset()
+{
+	headShape->setPosition(GET_VIEWPORT->GetGrid()->GetNodeList()[165]->GetShape()->getPosition());
+	headShape->setFillColor(sf::Color::Transparent);
+	headShape->setOutlineColor(sf::Color::Transparent);
+
+	for (size_t i = 0; i < bodyList.size(); i++)
+	{
+		delete bodyList[i];
+		bodyList[i] = nullptr;
+	}
+	bodyList.clear();
+
 }

@@ -10,12 +10,6 @@ Viewport::Viewport(const int& _width, const int& _height, const std::string& _ti
 
     snakeHead = new SnakeHead(sf::Vector2f(grid->GetNodeSizeX(), grid->GetNodeSizeY()) , grid->GetNodeList()[165]->GetShape()->getPosition());
 
-    snakeHead->AddBody();
-    snakeHead->AddBody();
-    snakeHead->AddBody();
-    snakeHead->AddBody();
-    snakeHead->AddBody();
-
    updateClock.restart();
 }
 
