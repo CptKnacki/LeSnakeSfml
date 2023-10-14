@@ -5,7 +5,7 @@
 #include "../Menu/MainMenu/MainMenu.h"
 #include "../Menu/GameOverMenu/GameOverMenu.h"
 #include "../Menu/SettingsMenu/SettingsMenu.h"
-
+#include "../GameModes/GameModes.h"
 
 class Engine
 {
@@ -16,14 +16,16 @@ private:
 	MainMenu* main = nullptr;
 	GameOverMenu* over = nullptr;
 	SettingsMenu* settings = nullptr;
+	GameModes* gameModes = nullptr;
 
 public:
 	Engine();
-	Engine(const int& _width, const int& _height, const std::string& _title);
+	Engine(const int& _width, const int& _height, const std::string& _title, GameModes* _gameModes);
 	~Engine();
 
 	Viewport* GetViewport();
 	void RunEngine();
 	void StopEngine();
+	bool IsInTeleportGameMode();
 };
 

@@ -39,6 +39,20 @@ std::vector<SnakeBody*> SnakeHead::GetBodyList()
 	return bodyList;
 }
 
+void SnakeHead::AddBodyAndRelocate(Node* _node)
+{
+	for (size_t i = 0; i < GET_VIEWPORT->GetGrid()->GetNodeList().size(); i++)
+	{
+		if (GET_VIEWPORT->GetGrid()->GetNodeList()[i]->GetContainedObject() && GET_VIEWPORT->GetGrid()->GetNodeList()[i] != _node)
+		{
+			headShape->setPosition(GET_VIEWPORT->GetGrid()->GetNodeList()[i]->GetShape()->getPosition());
+			GET_VIEWPORT->GetGrid()->GetNodeList()[i]->DestroyContainedObject();
+		}
+	}
+
+	AddBody();
+}
+
 void SnakeHead::AddBody()
 {
 
@@ -46,37 +60,40 @@ void SnakeHead::AddBody()
 
 	switch (direction)
 	{
-	case UP: 
+	case UP:
 	{
-		_positionOffset = sf::Vector2f(0 , rightMovementRange * bodyList.size());
+		_positionOffset = sf::Vector2f(0, rightMovementRange * bodyList.size());
 		break;
 	}
-	case DOWN: 
+	case DOWN:
 	{
 
-		_positionOffset = sf::Vector2f(0 , -rightMovementRange * bodyList.size());
-		break; 
+		_positionOffset = sf::Vector2f(0, -rightMovementRange * bodyList.size());
+		break;
 	}
 	case LEFT:
 	{
 
 		_positionOffset = sf::Vector2f(leftMovementRange * bodyList.size(), 0);
 
-		break; 
+		break;
 	}
 	case RIGHT:
 	{
 
 		_positionOffset = sf::Vector2f(-leftMovementRange * bodyList.size(), 0);
-		break; 
+		break;
 	}
 	default:
 		break;
 	}
 
-	bodyList.push_back(new SnakeBody(sf::Vector2f(leftMovementRange, rightMovementRange), headShape->getPosition() + _positionOffset));
-	
+	bodyList.push_back(new SnakeBody(sf::Vector2f(leftMovementRange, rightMovementRange), (sf::Vector2f)GET_VIEWPORT->GetWindow()->getSize()));
+
 }
+
+
+
 
 void SnakeHead::DetermineDeath()
 {
