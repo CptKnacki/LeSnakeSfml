@@ -1,6 +1,7 @@
 #include "Engine.h"
 #include "../GameEngineManager/GameEngineManager.h"
 #include "../BaseMenuManager/MenuManager.h"
+#include "../GameModes/TeleportGM/TeleportGM.h"
 
 Engine::Engine()
 {
@@ -11,8 +12,9 @@ Engine::Engine()
 	over = new GameOverMenu();
 }
 
-Engine::Engine(const int& _width, const int& _height, const std::string& _title)
+Engine::Engine(const int& _width, const int& _height, const std::string& _title, GameModes* _gameModes)
 {
+	gameModes = _gameModes;
 	dataBase = new DataBase();
 	viewport = new Viewport(_width, _height, _title);
 	GameEngineManager::Instance()->Register(this);
@@ -28,6 +30,8 @@ Engine::~Engine()
 	dataBase = nullptr;
 	delete main;
 	main = nullptr;
+	delete gameModes;
+	gameModes = nullptr;
 }
 
 Viewport* Engine::GetViewport()
@@ -44,4 +48,16 @@ void Engine::RunEngine()
 void Engine::StopEngine()
 {
 	// ???
+}
+
+bool Engine::IsInTeleportGameMode()
+{
+	if (!gameModes)
+		return false;
+
+	TeleportGM* _gm = reinterpret_cast<TeleportGM*>(gameModes);
+
+	if (_gm)
+		return true;
+	return false;
 }

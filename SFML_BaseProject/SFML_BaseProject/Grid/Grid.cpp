@@ -92,13 +92,41 @@ void Grid::SetGridColor()
 	}
 }
 
+void Grid::CreateApplesForTeleportGM()
+{
+	int _gridSize = nodeList.size();
+	std::random_device _rd;
+	std::mt19937 _gen(_rd());
+	std::uniform_int_distribution<> _distrib(0, _gridSize);
+
+	int _result = _distrib(_gen);
+	int _result2 = _distrib(_gen);
+
+	while (_result == _result2)
+	{
+		_result = _distrib(_gen);
+		_result2 = _distrib(_gen);
+	}
+
+	float _size = (nodeSizeX >= nodeSizeY) ? nodeSizeY : nodeSizeX;
+
+	sf::Vector2f _appleSize = nodeList[_result]->GetShape()->getPosition() + sf::Vector2f(nodeSizeX / 2, nodeSizeY / 2);
+	nodeList[_result]->SetContainedObject(new Apple(_appleSize, _size));
+
+	sf::Vector2f _appleSize2 = nodeList[_result2]->GetShape()->getPosition() + sf::Vector2f(nodeSizeX / 2, nodeSizeY / 2);
+	nodeList[_result2]->SetContainedObject(new Apple(_appleSize2, _size));
+
+
+}
+
+
 void Grid::CreateApple()
 {
 
 	int _gridSize = nodeList.size();
 	std::random_device _rd;
 	std::mt19937 _gen(_rd());
-	std::uniform_int_distribution<> _distrib(0, _gridSize - 1);
+	std::uniform_int_distribution<> _distrib(0, _gridSize);
 	int _result = _distrib(_gen);
 	
 	float _size = (nodeSizeX >= nodeSizeY) ? nodeSizeY : nodeSizeX;
@@ -106,14 +134,37 @@ void Grid::CreateApple()
 	sf::Vector2f _appleSize = nodeList[_result]->GetShape()->getPosition() + sf::Vector2f(nodeSizeX / 2, nodeSizeY / 2);
 	nodeList[_result]->SetContainedObject(new Apple(_appleSize, _size));
 
-	if (nodeList[_result]->GetShape()->getPosition() == GET_VIEWPORT->GetSnakeHead()->GetHeadShape()->getPosition())
-		nodeList[_result]->DestroyContainedObject();
-
+	//if (nodeList[_result]->GetShape()->getPosition() == GET_VIEWPORT->GetSnakeHead()->GetHeadShape()->getPosition())
+	//	nodeList[_result]->DestroyContainedObject();
+	//
+	//for (size_t i = 0; i < GET_VIEWPORT->GetSnakeHead()->GetBodyList().size(); i++)
+	//	nodeList[_result]->DestroyContainedObject();
 
 }
 
 bool Grid::HasApple()
 {
+
+	if (GET_ENGINE->IsInTeleportGameMode())
+	{
+		int _applesIndex = 0;
+
+		for (size_t i = 0; i < nodeList.size(); i++)
+		{
+			Apple* _apple = dynamic_cast<Apple*>(nodeList[i]->GetContainedObject());
+
+			if (_apple)
+				_applesIndex++;
+		}
+
+		if (_applesIndex == 2)
+			return true;
+
+		return false;
+	}
+
+
+
 	bool _hasApple = false;
 
 	for (size_t i = 0; i < nodeList.size(); i++)
@@ -139,8 +190,20 @@ void Grid::Update()
 	if (!gameIsOn)
 		return;
 
+
 	if (!HasApple())
-		CreateApple();
+	{
+		if (GET_ENGINE->IsInTeleportGameMode())
+		{
+			CreateApplesForTeleportGM();
+		}
+		else
+		{
+
+			CreateApple();
+		}
+	}
+	
 }
 
 void Grid::Restart()

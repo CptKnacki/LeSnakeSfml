@@ -22,6 +22,7 @@ public:
 	std::vector<Node*> GetNodeList();
 
 	void SetGridColor();
+	void CreateApplesForTeleportGM();
 	void CreateApple();
 	bool HasApple();
 

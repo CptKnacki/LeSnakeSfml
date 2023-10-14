@@ -4,6 +4,8 @@
 #include <vector>
 #include "../../Action/Action.h"
 
+class Node;
+
 enum MoveDirection
 {
 	UP = 0,
@@ -35,6 +37,7 @@ public:
 	int GetScore();
 	sf::RectangleShape* GetHeadShape();
 	std::vector<SnakeBody*> GetBodyList();
+	void AddBodyAndRelocate(Node* _node);
 	void AddBody();
 	void DetermineDeath();
 	void Kill();

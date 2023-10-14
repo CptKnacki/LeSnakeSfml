@@ -1,6 +1,7 @@
 #include "Viewport.h"
 #include "../GameObjectManager/GameObjectManager.h"
 #include "../BaseMenuManager/MenuManager.h"
+#include "../Utils.h"
 
 Viewport::Viewport(const int& _width, const int& _height, const std::string& _title)
 {
@@ -86,8 +87,16 @@ void Viewport::DetermineAppleCollision()
     {
         if (grid->GetNodeList()[i]->GetContainedObject() && grid->GetNodeList()[i]->GetShape()->getPosition() == snakeHead->GetHeadShape()->getPosition())
         {
-            grid->GetNodeList()[i]->DestroyContainedObject();
-            snakeHead->AddBody();
+            if (GET_ENGINE->IsInTeleportGameMode())
+            {
+                grid->GetNodeList()[i]->DestroyContainedObject();
+                snakeHead->AddBodyAndRelocate(grid->GetNodeList()[i]);
+            }
+            else
+            {
+                grid->GetNodeList()[i]->DestroyContainedObject();
+                snakeHead->AddBody();
+            }
         }
     }
 }
