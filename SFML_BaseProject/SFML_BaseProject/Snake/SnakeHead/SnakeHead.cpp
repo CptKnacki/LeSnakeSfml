@@ -223,29 +223,41 @@ void SnakeHead::Update()
 		break;
 	}
 
+	DetermineDeath();
 
 
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Z) || sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		if(direction == MoveDirection::LEFT || direction == MoveDirection::RIGHT)
+		{
 			direction = MoveDirection::UP;
+			return;
+		}
 	
 
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Q) || sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-		if(direction == MoveDirection::UP || direction == MoveDirection::DOWN)
+		if (direction == MoveDirection::UP || direction == MoveDirection::DOWN)
+		{
 			direction = MoveDirection::LEFT;
+			return;
+		}
 	
 	
 	if(sf::Keyboard::isKeyPressed(sf::Keyboard::S) || sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-		if(direction == MoveDirection::LEFT || direction == MoveDirection::RIGHT)
-		direction = MoveDirection::DOWN;
+		if (direction == MoveDirection::LEFT || direction == MoveDirection::RIGHT)
+		{
+			direction = MoveDirection::DOWN;
+			return;
+		}
 	
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) || sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-		if(direction == MoveDirection::UP || direction == MoveDirection::DOWN)
+		if (direction == MoveDirection::UP || direction == MoveDirection::DOWN)
+		{
 			direction = MoveDirection::RIGHT;
+			return;
+		}
 	
 	
-	DetermineDeath();
 	
 }
 

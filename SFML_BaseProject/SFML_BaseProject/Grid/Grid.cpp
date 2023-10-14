@@ -2,9 +2,8 @@
 #include "../Utils.h"
 #include "../Apple/Apple.h"
 #include <iostream>
-#include <stdio.h>      
-#include <stdlib.h>     
-#include <time.h>       
+#include <windows.h>
+#include <random>   
 
 Grid::Grid(sf::RenderWindow* _window, const int& _nodeDivideCount)
 {
@@ -35,9 +34,7 @@ Grid::Grid(sf::RenderWindow* _window, const int& _nodeDivideCount)
 Grid::~Grid()
 {
 	for (size_t i = 0; i < nodeList.size(); i++)
-	{
 		delete nodeList[i];
-	}
 	nodeList.clear();
 }
 
@@ -97,13 +94,12 @@ void Grid::SetGridColor()
 
 void Grid::CreateApple()
 {
-	srand(time(0));
 
 	int _gridSize = nodeList.size();
-	int _result = rand() % _gridSize;
-	int _offset = 0;
-
-
+	std::random_device _rd;
+	std::mt19937 _gen(_rd());
+	std::uniform_int_distribution<> _distrib(0, _gridSize);
+	int _result = _distrib(_gen);
 	
 	float _size = (nodeSizeX >= nodeSizeY) ? nodeSizeY : nodeSizeX;
 
@@ -111,17 +107,12 @@ void Grid::CreateApple()
 	nodeList[_result]->SetContainedObject(new Apple(_appleSize, _size));
 
 	if (nodeList[_result]->GetShape()->getPosition() == GET_VIEWPORT->GetSnakeHead()->GetHeadShape()->getPosition())
-	{
-	
 		nodeList[_result]->DestroyContainedObject();
-	}
+
+
 
 	for (size_t i = 0; i < GET_VIEWPORT->GetSnakeHead()->GetBodyList().size(); i++)
-	{
-
 		nodeList[_result]->DestroyContainedObject();
-		
-	}
 
 }
 
@@ -143,16 +134,14 @@ bool Grid::HasApple()
 void Grid::Draw(sf::RenderWindow& _window)
 {
 	for (size_t i = 0; i < nodeList.size(); i++)
-	{
 		_window.draw(*nodeList[i]->GetShape());
-	}
+	
 }
 
 void Grid::Update()
 {
 	if (!gameIsOn)
 		return;
-
 
 	if (!HasApple())
 		CreateApple();
