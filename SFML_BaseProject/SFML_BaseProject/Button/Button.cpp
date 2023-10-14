@@ -6,6 +6,9 @@ Button::Button(const Vector2f& _position, const Vector2f& _size, const std::stri
 	render = _render;
 	rect = new RectangleShape(_size);
 	rect->setPosition(_position);
+	rect->setOutlineThickness(5);
+	rect->setOutlineColor(Color::Black);
+
 	label = Text(_label, DataBase::Font);
 	label.setOrigin(Vector2f(-_size.x / 4, _size.y / 4));
 	label.setPosition(_position + Vector2f(0, _size.y / 1.5));
@@ -38,6 +41,11 @@ void Button::Draw(RenderWindow& _window)
 
 void Button::Update()
 {
+	if (IsClicked())
+	{
+
+		onClicked.Invoke();
+	}
 
 }
 

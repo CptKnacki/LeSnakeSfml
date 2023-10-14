@@ -36,7 +36,7 @@ sf::RectangleShape* SnakeHead::GetHeadShape()
 
 std::vector<SnakeBody*> SnakeHead::GetBodyList()
 {
-	return std::vector<SnakeBody*>();
+	return bodyList;
 }
 
 void SnakeHead::AddBody()
@@ -84,6 +84,7 @@ void SnakeHead::DetermineDeath()
 	{
 		if (bodyList[i]->GetShape()->getPosition() == headShape->getPosition())
 		{
+		onDie.Invoke();
 			headShape->setFillColor(sf::Color::Transparent);
 			headShape->setOutlineColor(sf::Color::Transparent);
 

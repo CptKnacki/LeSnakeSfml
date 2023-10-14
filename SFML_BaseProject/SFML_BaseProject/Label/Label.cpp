@@ -40,3 +40,13 @@ int Label::GetCharaSize() const
 {
     return text.getCharacterSize();
 }
+
+void Label::SetText(const std::string& _text)
+{
+    text.setString(_text);
+}
+
+std::string Label::GetText() const
+{
+    return text.getString();
+}

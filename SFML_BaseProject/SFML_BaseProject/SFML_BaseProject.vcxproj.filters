@@ -21,6 +21,8 @@
     <ClCompile Include="Label\Label.cpp" />
     <ClCompile Include="Image\Image.cpp" />
     <ClCompile Include="Menu\GameOverMenu\GameOverMenu.cpp" />
+    <ClCompile Include="Menu\SettingsMenu\SettingsMenu.cpp" />
+    <ClCompile Include="Case\Case.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Apple\Apple.h" />
@@ -44,5 +46,8 @@
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Viewport\Viewport.h" />
     <ClInclude Include="Menu\GameOverMenu\GameOverMenu.h" />
+    <ClInclude Include="Action\Action.h" />
+    <ClInclude Include="Menu\SettingsMenu\SettingsMenu.h" />
+    <ClInclude Include="Case\Case.h" />
   </ItemGroup>
 </Project>

@@ -9,6 +9,8 @@ MainMenu::MainMenu() : BaseMenu("Main")
 	InitSnakeTitle();
 	InitCreatorText();
 	InitLogo();
+	InitCase();
+	InitSettingsButton();
 }
 
 MainMenu::~MainMenu()
@@ -27,9 +29,16 @@ void MainMenu::Update()
 
 void MainMenu::InitPlayButton()
 {
-	playButton = new Button(Vector2f(GET_WINDOW->getSize().x / 2, GET_WINDOW->getSize().y / 1.5), Vector2f(400, 100), "Play", GET_WINDOW, 40);
+	playButton = new Button(Vector2f(GET_WINDOW->getSize().x / 2, GET_WINDOW->getSize().y / 2), Vector2f(400, 100), "Play", GET_WINDOW, 40);
 	playButton->SetPosition(playButton->GetPosition() - Vector2f(playButton->GetSize().x / 2, 0));
 	elements.push_back(playButton);
+}
+
+void MainMenu::InitSettingsButton()
+{
+	settingsButton = new Button(Vector2f(GET_WINDOW->getSize().x / 2, GET_WINDOW->getSize().y / 1.5), Vector2f(400, 100), "Settings", GET_WINDOW, 40);
+	settingsButton->SetPosition(settingsButton->GetPosition() - Vector2f(settingsButton->GetSize().x / 2, 0));
+	elements.push_back(settingsButton);
 }
 
 void MainMenu::InitSnakeTitle()
@@ -48,9 +57,15 @@ void MainMenu::InitCreatorText()
 void MainMenu::InitLogo()
 {
 	Texture _texture = Texture();
-	if (!_texture.loadFromFile("../Texture/O3D.jfif"))
+	if (!_texture.loadFromFile("../Texture/O3D.png"))
 		return;
 	logo = new UImage(Vector2f(GET_WINDOW->getSize().x - 100, GET_WINDOW->getSize().y / 1.15), _texture);
 	logo->SetScale(Vector2f(0.3, 0.3));
 	elements.push_back(logo);
+}
+
+void MainMenu::InitCase()
+{
+	caseTest = new Case(Vector2f(100, 100), 50, GET_WINDOW, true);
+	elements.push_back(caseTest);
 }

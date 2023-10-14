@@ -33,6 +33,10 @@ void MenuManager::SwitchMenu()
 		if (menuList["Over"])
 			menuList["Over"]->Open();
 		break;
+	case Menu::Settings:
+		if (menuList["Settings"])
+			menuList["Settings"]->Open();
+		break;
 	case None:
 		return;
 	}

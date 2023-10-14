@@ -8,7 +8,8 @@ enum Menu
 	None,
 	Main,
 	Game,
-	Over
+	Over,
+	Settings
 };
 
 class MenuManager : public Singleton<MenuManager>

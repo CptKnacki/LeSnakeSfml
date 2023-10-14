@@ -2,6 +2,7 @@
 #include "../../GameObject/GameObject.h"
 #include "../SnakeBody/SnakeBody.h"
 #include <vector>
+#include "../../Action/Action.h"
 
 enum MoveDirection
 {
@@ -24,7 +25,10 @@ private:
 	MoveDirection direction = MoveDirection::RIGHT;
 	bool gameIsOn = true;
 
+	Action onDie;
+
 public:
+	Action& OnDie() { return onDie; }
 	SnakeHead(const sf::Vector2f& _size, const sf::Vector2f& _position);
 	~SnakeHead();
 

@@ -134,8 +134,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Action\Action.h" />
     <ClInclude Include="Apple\Apple.h" />
     <ClInclude Include="BaseMenuManager\MenuManager.h" />
+    <ClInclude Include="Case\Case.h" />
     <ClInclude Include="Menu\GameOverMenu\GameOverMenu.h" />
     <ClInclude Include="Image\Image.h" />
     <ClInclude Include="Label\Label.h" />
@@ -150,6 +152,7 @@
     <ClInclude Include="Grid\Grid.h" />
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Object\Object.h" />
+    <ClInclude Include="Menu\SettingsMenu\SettingsMenu.h" />
     <ClInclude Include="Singleton\Singleton.h" />
     <ClInclude Include="Snake\SnakeBody\SnakeBody.h" />
     <ClInclude Include="Snake\SnakeHead\SnakeHead.h" />
@@ -160,6 +163,7 @@
     <ClCompile Include="Apple\Apple.cpp" />
     <ClCompile Include="BaseMenuManager\MenuManager.cpp" />
     <ClCompile Include="Button\Button.cpp" />
+    <ClCompile Include="Case\Case.cpp" />
     <ClCompile Include="DataBase\DataBase.cpp" />
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="GameEngineManager\GameEngineManager.cpp" />
@@ -173,6 +177,7 @@
     <ClCompile Include="Menu\MainMenu\MainMenu.cpp" />
     <ClCompile Include="Node\Node.cpp" />
     <ClCompile Include="Object\Object.cpp" />
+    <ClCompile Include="Menu\SettingsMenu\SettingsMenu.cpp" />
     <ClCompile Include="SFML_BaseProject.cpp" />
     <ClCompile Include="Snake\SnakeBody\SnakeBody.cpp" />
     <ClCompile Include="Snake\SnakeHead\SnakeHead.cpp" />

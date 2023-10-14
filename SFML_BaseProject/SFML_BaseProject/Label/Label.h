@@ -20,5 +20,8 @@ public:
 
 	void SetCharaSize(const int& _size);
 	int GetCharaSize() const;
+
+	void SetText(const std::string& _text);
+	std::string GetText() const;
 };
 

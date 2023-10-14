@@ -1,12 +1,14 @@
 #include "GameOverMenu.h"
 #include "../../Utils.h"
 #include "../../BaseMenuManager/MenuManager.h"
+#include <format>
 
 GameOverMenu::GameOverMenu() : BaseMenu("Over")
 {
 	InitReturnMenu();
 	InitRestartButton();
 	InitGameOverText();
+	InitScoreText();
 }
 
 GameOverMenu::~GameOverMenu()
@@ -24,6 +26,11 @@ void GameOverMenu::Update()
 		GET_VIEWPORT->GetSnakeHead()->Restart();
 		GET_VIEWPORT->GetGrid()->Restart();
 	}
+}
+
+void GameOverMenu::SetScore()
+{
+	scoreText->SetText("Score :" + std::format("{}", GET_VIEWPORT->GetSnakeHead()->GetBodyList().size()));
 }
 
 void GameOverMenu::InitReturnMenu()
@@ -47,4 +54,12 @@ void GameOverMenu::InitGameOverText()
 	gameOverText = new Label(Vector2f(GET_WINDOW->getSize().x / 2, GET_WINDOW->getSize().y / 4), "GAME OVER", 80);
 	gameOverText->SetPosition(Vector2f(gameOverText->GetPosition() - Vector2f(250, 0)));
 	elements.push_back(gameOverText);
+}
+
+void GameOverMenu::InitScoreText()
+{
+	scoreText = new Label(Vector2f(GET_WINDOW->getSize().x / 2, GET_WINDOW->getSize().y / 3), "Score : ", 40);
+	scoreText->SetPosition(Vector2f(scoreText->GetPosition() - Vector2f(250, 0)));
+	GET_VIEWPORT->GetSnakeHead()->OnDie().Bind(this, &GameOverMenu::SetScore);
+	elements.push_back(scoreText);
 }

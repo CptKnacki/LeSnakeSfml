@@ -98,7 +98,7 @@ void Grid::CreateApple()
 	int _gridSize = nodeList.size();
 	std::random_device _rd;
 	std::mt19937 _gen(_rd());
-	std::uniform_int_distribution<> _distrib(0, _gridSize);
+	std::uniform_int_distribution<> _distrib(0, _gridSize - 1);
 	int _result = _distrib(_gen);
 	
 	float _size = (nodeSizeX >= nodeSizeY) ? nodeSizeY : nodeSizeX;
@@ -109,10 +109,6 @@ void Grid::CreateApple()
 	if (nodeList[_result]->GetShape()->getPosition() == GET_VIEWPORT->GetSnakeHead()->GetHeadShape()->getPosition())
 		nodeList[_result]->DestroyContainedObject();
 
-
-
-	for (size_t i = 0; i < GET_VIEWPORT->GetSnakeHead()->GetBodyList().size(); i++)
-		nodeList[_result]->DestroyContainedObject();
 
 }
 
