@@ -1,11 +1,13 @@
 #include "SettingsMenu.h"
 #include "../../Utils.h"
+#include "../../BaseMenuManager/MenuManager.h"
 
 SettingsMenu::SettingsMenu() : BaseMenu("Settings")
 {
-	InitTitle();
 	InitBackground();
+	InitTitle();
 	InitCaseTest();
+	InitReturnButton();
 }
 
 SettingsMenu::~SettingsMenu()
@@ -22,8 +24,21 @@ void SettingsMenu::InitTitle()
 
 void SettingsMenu::InitBackground()
 {
+	background = new RectangleShape(Vector2f(GET_WINDOW->getSize().x, GET_WINDOW->getSize().y));
 }
 
 void SettingsMenu::InitCaseTest()
 {
+}
+
+void SettingsMenu::InitReturnButton()
+{
+	returnButton = new Button(Vector2f(10, 10), Vector2f(120, 40), "Return", GET_WINDOW, 20);
+	returnButton->OnClicked().Bind(this, &SettingsMenu::ReturnButtonClicked);
+	elements.push_back(returnButton);
+}
+
+void SettingsMenu::ReturnButtonClicked()
+{
+	MenuManager::Instance()->SetState(Menu::Main);
 }

@@ -27,5 +27,8 @@ private:
 	void InitCreatorText();
 	void InitLogo();
 	void InitCase();
+
+	void SettingsButtonClicked();
+	void PlayButtonClicked();
 };
 

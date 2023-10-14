@@ -19,18 +19,14 @@ MainMenu::~MainMenu()
 
 void MainMenu::Update()
 {
-	if (playButton->IsClicked())
-	{
-		MenuManager::Instance()->SetState(Menu::Game);
-		GET_VIEWPORT->GetSnakeHead()->Restart();
-		GET_VIEWPORT->GetGrid()->Restart();
-	}
+
 }
 
 void MainMenu::InitPlayButton()
 {
 	playButton = new Button(Vector2f(GET_WINDOW->getSize().x / 2, GET_WINDOW->getSize().y / 2), Vector2f(400, 100), "Play", GET_WINDOW, 40);
 	playButton->SetPosition(playButton->GetPosition() - Vector2f(playButton->GetSize().x / 2, 0));
+	playButton->OnClicked().Bind(this, &MainMenu::PlayButtonClicked);
 	elements.push_back(playButton);
 }
 
@@ -38,6 +34,7 @@ void MainMenu::InitSettingsButton()
 {
 	settingsButton = new Button(Vector2f(GET_WINDOW->getSize().x / 2, GET_WINDOW->getSize().y / 1.5), Vector2f(400, 100), "Settings", GET_WINDOW, 40);
 	settingsButton->SetPosition(settingsButton->GetPosition() - Vector2f(settingsButton->GetSize().x / 2, 0));
+	settingsButton->OnClicked().Bind(this, &MainMenu::SettingsButtonClicked);
 	elements.push_back(settingsButton);
 }
 
@@ -68,4 +65,16 @@ void MainMenu::InitCase()
 {
 	caseTest = new Case(Vector2f(100, 100), 50, GET_WINDOW, true);
 	elements.push_back(caseTest);
+}
+
+void MainMenu::SettingsButtonClicked()
+{
+	MenuManager::Instance()->SetState(Menu::Settings);
+}
+
+void MainMenu::PlayButtonClicked()
+{
+	MenuManager::Instance()->SetState(Menu::Game);
+	GET_VIEWPORT->GetSnakeHead()->Restart();
+	GET_VIEWPORT->GetGrid()->Restart();
 }

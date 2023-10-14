@@ -12,6 +12,7 @@ class Button : public GameObject
 
 	bool Contains(const Vector2i& _input) const;
 public:
+	Action& OnClicked() { return onClicked; }
 	Button(const Vector2f& _position, const Vector2f& _size, const std::string& _label, RenderWindow* _render, const int& _fontSize = 12);
 	~Button();
 

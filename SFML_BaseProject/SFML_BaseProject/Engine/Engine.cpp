@@ -9,6 +9,7 @@ Engine::Engine()
 	GameEngineManager::Instance()->Register(this);
 	main = new MainMenu();
 	over = new GameOverMenu();
+	settings = new SettingsMenu();
 }
 
 Engine::Engine(const int& _width, const int& _height, const std::string& _title)
@@ -18,6 +19,7 @@ Engine::Engine(const int& _width, const int& _height, const std::string& _title)
 	GameEngineManager::Instance()->Register(this);
 	main = new MainMenu();
 	over = new GameOverMenu();
+	settings = new SettingsMenu();
 }
 
 Engine::~Engine()
@@ -26,8 +28,10 @@ Engine::~Engine()
 	viewport = nullptr;
 	delete dataBase;
 	dataBase = nullptr;
-	delete main;
+	delete main, over, settings;
 	main = nullptr;
+	over = nullptr;
+	settings = nullptr;
 }
 
 Viewport* Engine::GetViewport()

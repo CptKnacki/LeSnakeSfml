@@ -4,6 +4,7 @@
 #include "../DataBase/DataBase.h"
 #include "../Menu/MainMenu/MainMenu.h"
 #include "../Menu/GameOverMenu/GameOverMenu.h"
+#include "../Menu/SettingsMenu/SettingsMenu.h"
 
 
 class Engine
@@ -14,6 +15,7 @@ private:
 
 	MainMenu* main = nullptr;
 	GameOverMenu* over = nullptr;
+	SettingsMenu* settings = nullptr;
 
 public:
 	Engine();

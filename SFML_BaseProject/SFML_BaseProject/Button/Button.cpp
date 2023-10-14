@@ -42,11 +42,11 @@ void Button::Draw(RenderWindow& _window)
 void Button::Update()
 {
 	if (IsClicked())
-	{
-
 		onClicked.Invoke();
-	}
-
+	if (Contains(Mouse::getPosition(*render)) && rect->getFillColor() != Color(128, 128, 128))
+		rect->setFillColor(Color(128, 128, 128));
+	else if (!Contains(Mouse::getPosition(*render)) && rect->getFillColor() != Color::White)
+		rect->setFillColor(Color::White);
 }
 
 bool Button::IsClicked()
