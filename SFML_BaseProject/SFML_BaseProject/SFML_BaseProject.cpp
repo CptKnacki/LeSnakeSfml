@@ -3,13 +3,20 @@
 
 #include <iostream>
 #include "Engine/Engine.h"
+#include "GameModes/TeleportGM/TeleportGM.h"
+#include "Test.h"
 
 int main()
 {
-	Engine _engine(1000, 1000, "SnakeSFML");
+	Engine _engine(800, 800, "SnakeSFML", new TeleportGM());
 	_engine.RunEngine();
 
+	//Test _test = Test();
+	//_test.TestRandom();
 
 	return 0;
+
+
+	
 }
 

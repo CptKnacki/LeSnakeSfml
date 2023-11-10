@@ -134,32 +134,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Action\Action.h" />
-    <ClInclude Include="Apple\Apple.h" />
-    <ClInclude Include="BaseMenuManager\MenuManager.h" />
-    <ClInclude Include="Case\Case.h" />
-    <ClInclude Include="Menu\GameOverMenu\GameOverMenu.h" />
-    <ClInclude Include="Image\Image.h" />
-    <ClInclude Include="Label\Label.h" />
-    <ClInclude Include="Menu\MainMenu\MainMenu.h" />
-    <ClInclude Include="Menu\BaseMenu.h" />
-    <ClInclude Include="Button\Button.h" />
-    <ClInclude Include="DataBase\DataBase.h" />
-    <ClInclude Include="Engine\Engine.h" />
-    <ClInclude Include="GameEngineManager\GameEngineManager.h" />
-    <ClInclude Include="GameObjectManager\GameObjectManager.h" />
-    <ClInclude Include="GameObject\GameObject.h" />
-    <ClInclude Include="Grid\Grid.h" />
-    <ClInclude Include="Node\Node.h" />
-    <ClInclude Include="Object\Object.h" />
-    <ClInclude Include="Menu\SettingsMenu\SettingsMenu.h" />
-    <ClInclude Include="Singleton\Singleton.h" />
-    <ClInclude Include="Snake\SnakeBody\SnakeBody.h" />
-    <ClInclude Include="Snake\SnakeHead\SnakeHead.h" />
-    <ClInclude Include="Utils.h" />
-    <ClInclude Include="Viewport\Viewport.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Apple\Apple.cpp" />
     <ClCompile Include="BaseMenuManager\MenuManager.cpp" />
     <ClCompile Include="Button\Button.cpp" />
@@ -167,21 +141,51 @@
     <ClCompile Include="DataBase\DataBase.cpp" />
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="GameEngineManager\GameEngineManager.cpp" />
+    <ClCompile Include="GameModes\GameModes.cpp" />
     <ClCompile Include="GameObjectManager\GameObjectManager.cpp" />
     <ClCompile Include="GameObject\GameObject.cpp" />
-    <ClCompile Include="Menu\GameOverMenu\GameOverMenu.cpp" />
     <ClCompile Include="Grid\Grid.cpp" />
     <ClCompile Include="Image\Image.cpp" />
     <ClCompile Include="Label\Label.cpp" />
     <ClCompile Include="Menu\BaseMenu.cpp" />
+    <ClCompile Include="Menu\GameOverMenu\GameOverMenu.cpp" />
     <ClCompile Include="Menu\MainMenu\MainMenu.cpp" />
     <ClCompile Include="Node\Node.cpp" />
     <ClCompile Include="Object\Object.cpp" />
-    <ClCompile Include="Menu\SettingsMenu\SettingsMenu.cpp" />
     <ClCompile Include="SFML_BaseProject.cpp" />
     <ClCompile Include="Snake\SnakeBody\SnakeBody.cpp" />
     <ClCompile Include="Snake\SnakeHead\SnakeHead.cpp" />
+    <ClCompile Include="GameModes\TeleportGM\TeleportGM.cpp" />
+    <ClCompile Include="Test.cpp" />
     <ClCompile Include="Viewport\Viewport.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Action\Action.h" />
+    <ClInclude Include="Apple\Apple.h" />
+    <ClInclude Include="BaseMenuManager\MenuManager.h" />
+    <ClInclude Include="Button\Button.h" />
+    <ClInclude Include="Case\Case.h" />
+    <ClInclude Include="DataBase\DataBase.h" />
+    <ClInclude Include="Engine\Engine.h" />
+    <ClInclude Include="GameEngineManager\GameEngineManager.h" />
+    <ClInclude Include="GameModes\GameModes.h" />
+    <ClInclude Include="GameObjectManager\GameObjectManager.h" />
+    <ClInclude Include="GameObject\GameObject.h" />
+    <ClInclude Include="Grid\Grid.h" />
+    <ClInclude Include="Image\Image.h" />
+    <ClInclude Include="Label\Label.h" />
+    <ClInclude Include="Menu\BaseMenu.h" />
+    <ClInclude Include="Menu\GameOverMenu\GameOverMenu.h" />
+    <ClInclude Include="Menu\MainMenu\MainMenu.h" />
+    <ClInclude Include="Node\Node.h" />
+    <ClInclude Include="Object\Object.h" />
+    <ClInclude Include="Singleton\Singleton.h" />
+    <ClInclude Include="Snake\SnakeBody\SnakeBody.h" />
+    <ClInclude Include="Snake\SnakeHead\SnakeHead.h" />
+    <ClInclude Include="GameModes\TeleportGM\TeleportGM.h" />
+    <ClInclude Include="Test.h" />
+    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Viewport\Viewport.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
