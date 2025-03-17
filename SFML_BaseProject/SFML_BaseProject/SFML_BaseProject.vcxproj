@@ -105,6 +105,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>..\SFML-2.5.1\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -150,6 +151,7 @@
     <ClCompile Include="Menu\BaseMenu.cpp" />
     <ClCompile Include="Menu\GameOverMenu\GameOverMenu.cpp" />
     <ClCompile Include="Menu\MainMenu\MainMenu.cpp" />
+    <ClCompile Include="Menu\SettingsMenu\SettingsMenu.cpp" />
     <ClCompile Include="Node\Node.cpp" />
     <ClCompile Include="Object\Object.cpp" />
     <ClCompile Include="SFML_BaseProject.cpp" />
@@ -177,6 +179,7 @@
     <ClInclude Include="Menu\BaseMenu.h" />
     <ClInclude Include="Menu\GameOverMenu\GameOverMenu.h" />
     <ClInclude Include="Menu\MainMenu\MainMenu.h" />
+    <ClInclude Include="Menu\SettingsMenu\SettingsMenu.h" />
     <ClInclude Include="Node\Node.h" />
     <ClInclude Include="Object\Object.h" />
     <ClInclude Include="Singleton\Singleton.h" />

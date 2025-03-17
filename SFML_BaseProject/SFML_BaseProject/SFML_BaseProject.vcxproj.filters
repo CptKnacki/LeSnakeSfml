@@ -87,6 +87,9 @@
     <ClCompile Include="Case\Case.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Menu\SettingsMenu\SettingsMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h">
@@ -165,6 +168,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Case\Case.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Menu\SettingsMenu\SettingsMenu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
